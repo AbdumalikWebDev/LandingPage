@@ -1,0 +1,28 @@
+@media only screen and (min-width: 2000px) {
+  .nav-container {
+    width: 1500px !important;
+  }
+  .main-content {
+    background-position-y: 200px !important;
+    overflow: hidden;
+
+  }
+  .main-content-container {
+    width: 1500px !important;
+  }
+  .monitoring-section-container {
+    width: 1500px !important;
+  }
+  .comment-section-container {
+    width: 1500px !important;
+  }
+  .faq-container {
+    width: 1500px !important;
+  }
+  .monthly-cards-container {
+    width: 1500px !important;
+  }
+  .footer-wrapper {
+    width: 1500px !important;
+  }
+}

@@ -1,0 +1,6 @@
+@media only screen and (max-width: 360px) {
+    .main-content {
+        background-size: 200%;
+        background-position: center bottom;
+    }
+}

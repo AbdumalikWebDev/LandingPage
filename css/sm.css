@@ -1,0 +1,231 @@
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 10px !important;
+  }
+  .sidebar {
+    display: flex !important;
+  }
+  .nav-container {
+    width: 95%;
+
+    .nav-left li:not(.nav-site-logo),
+    .nav-right ul {
+      display: none !important;
+    }
+    .nav-right #bars {
+      display: flex;
+      border: none;
+      outline: none;
+      user-select: none;
+      &:active {
+        i {
+          color: var(--color-blue);
+        }
+      }
+    }
+    .nav-right {
+      justify-content: flex-end;
+    }
+  }
+  .main-content {
+    overflow: hidden;
+    background-size: 150%;
+    background-position-y: 200px;
+
+    .main-content-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    
+    h1 {
+      font-size: var(--size-3r) !important;
+    }
+    .star1 {
+      display: none;
+    }
+    p {
+      max-width: 90% !important;
+    }
+    .main-btn {
+      width: 250px;
+      .view-pricing {
+        width: fit-content;
+        i {
+          margin-left: 5px;
+        }
+      }
+    }
+    .main-top {
+      height: 300px;
+    }
+    .main-bottom {
+      ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li {
+          margin-inline: 10px;
+        }
+        li:nth-of-type(1) {
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .phone-image {
+        /* width: 100% !important;
+        height: fit-content !important; */
+        display: none;
+      }
+    }
+    .main-bottom li a img {
+      width: 75px;
+    }
+  }
+  .monitoring-section-container {
+    width: 95%;
+    padding-block: 30px;
+
+    .row1,
+    .row3 {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+    .row2 {
+      flex-direction: column-reverse;
+      align-items: center;
+      margin: 0;
+    }
+    .row1-right,
+    .row1-left,
+    .row2-left,
+    .row2-right,
+    .row3-left,
+    .row3-right {
+      width: 100%;
+      margin-bottom: var(--size-1r);
+    }
+    .subs-left,
+    .subs-right {
+      height: 100px;
+    }
+  }
+  .comment-section-container {
+    .comments-title {
+      height: 100px;
+    }
+    .comments {
+      max-width: 1351px !important;
+      mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 1%,
+        rgba(0, 0, 0, 1) 95%,
+        rgba(0, 0, 0, 0)
+      ) !important;
+
+      .slide {
+        width: 230px;
+        height: 150px;
+      }
+      .slide2 {
+        width: 230px;
+        height: 150px !important;
+        left: -230px;
+      }
+      .comment-row1,
+      .comment-row2 {
+        height: 170px !important;
+        width: 1000px;
+      }
+    }
+  }
+  .faq-container {
+    flex-direction: column;
+    width: 95%;
+    height: 550px;
+
+    .faq-left {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .questions {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  .monthly-cards-container {
+    width: 95% !important;
+
+    .monthly-cards {
+      flex-direction: column;
+      padding-bottom: 50px;
+    }
+    .monthly-card {
+      width: 90%;
+      margin: 10px auto;
+
+      .card-btn {
+        padding-block: 10px;
+      }
+    }
+    .monitor {
+      height: 400px;
+
+      h1 {
+        font-size: calc(var(--size-3r) + var(--size-05));
+      }
+
+      p {
+        text-align: center !important;
+        max-width: 90%;
+      }
+      .try-for-free {
+        width: 200px;
+        a button {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .footer-wrapper {
+    width: 95% !important;
+
+    .footer-top {
+      flex-direction: column;
+
+      .footer-top-left {
+        margin-bottom: var(--size-4r);
+
+        #site-logo {
+          width: 200px;
+        }
+      }
+      .footer-top-right {
+        width: 100% !important;
+        align-items: stretch !important;
+      }
+    }
+    .footer-bottom {
+      flex-direction: column-reverse;
+      align-items: center;
+
+      .footer-bottom-left {
+        text-align: center;
+      }
+      .footer-bottom-right {
+        margin-bottom: var(--size-1r);
+        --size-12: 1.5rem !important;
+        img {
+          width: var(--size-15) + 1px !important;
+        }
+        i {
+          font-size: var(--size-2r) !important;
+        }
+      }
+    }
+  }
+}
