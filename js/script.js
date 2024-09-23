@@ -47,3 +47,54 @@ radioInputs.forEach((input, index) => {
   });
 });
 //! for FAQ questions;
+
+let signInButton = document.querySelector(".sign-in"),
+  signUpButton = document.querySelector(".sign-up"),
+  signInContent = document.querySelector(".sign-in-content"),
+  signUpContent = document.querySelector(".sign-up-content"),
+  emailInput = document.querySelector(".email-input"),
+  emailIcon = document.querySelector(".email-icon"),
+  eyeIcon = document.querySelector(".eye-icon"),
+  passwordInput = document.querySelector(".pass-input"),
+  verifyInput = document.querySelector(".verify-input");
+
+signInButton.addEventListener("click", () => {
+  signUpButton.style.color = "#cbcbcb";
+  signInButton.style.color = "#038be5";
+  signUpContent.classList.add("to-right");
+  signUpContent.style.display = "none";
+  signInContent.style.display = "flex";
+});
+signUpButton.addEventListener("click", () => {
+  signUpButton.style.color = "#038be5";
+  signInButton.style.color = "#cbcbcb";
+  signUpContent.classList.remove("to-right");
+  signInContent.style.display = "none";
+  signUpContent.style.display = "flex";
+});
+
+eyeIcon.addEventListener("click", () => {
+  if (
+    passwordInput.getAttribute("type") === "text" &&
+    eyeIcon.classList.contains("fa-eye")
+  ) {
+    passwordInput.setAttribute("type", "password");
+    eyeIcon.classList.remove("fa-eye");
+    eyeIcon.classList.add("fa-eye-slash");
+  } else {
+    passwordInput.setAttribute("type", "text");
+    eyeIcon.classList.remove("fa-eye-slash");
+    eyeIcon.classList.add("fa-eye");
+  }
+});
+
+emailIcon.addEventListener("click", () => {
+  if (emailIcon.classList.contains("fa-envelope")) {
+    emailIcon.classList.remove("fa-envelope");
+    emailIcon.classList.add("fa-envelope-open");
+  } else {
+    emailIcon.classList.remove("fa-envelope-open");
+    emailIcon.classList.add("fa-envelope");
+  }
+});
+//! for Login Page;

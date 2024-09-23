@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="itqJRlRqUUYrVYby1JIwYHN6Y6_KXv4e6rvCDc4gAv8"
+    />
     <title>Landing Page</title>
     <meta
       name="description"
@@ -26,15 +30,72 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./css/xxl.css">
+    <link rel="stylesheet" href="./css/xxl.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/md.css" />
     <link rel="stylesheet" href="./css/sm.css" />
-    <link rel="stylesheet" href="./css/xsm.css">
+    <link rel="stylesheet" href="./css/xsm.css" />
   </head>
 
   <body class="loading">
-    <!--! LOADING SCREEN --------->
+    <div class="form-container">
+      <div class="form-btn">
+        <button class="sign-in">Sign In</button>
+        <button class="sign-up">Sign Up</button>
+      </div>
+      <div class="content">
+        <div class="sign-in-content">
+          <div class="email-input-box">
+            <input
+              type="email"
+              placeholder="Email"
+              class="email-input"
+              required
+            />
+            <i class="fa-solid fa-envelope email-icon"></i>
+          </div>
+          <div class="pass-input-box">
+            <input
+              type="password"
+              placeholder="Password"
+              class="pass-input"
+              required
+            />
+            <i class="fa-solid eye-icon fa-eye"></i>
+          </div>
+          <a href="#" class="isForgot">Forgot Password?</a>
+          <a href="index.html">
+            <button class="sign-in-btn">Sign In</button>
+          </a>
+          <a href="#" id="privacy">Privacy Policy</a>
+        </div>
+        <!-- ---------------------------------------------------------------- -->
+        <div class="sign-up-content to-right">
+          <input
+            type="email"
+            placeholder="Email"
+            class="email-input"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            class="pass-input"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Verify Password"
+            class="verify-input"
+            required
+          />
+          <a href="index.html">
+            <button class="sign-up-btn">Sign Up</button>
+          </a>
+          <a href="#" class="privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
 
     <div class="loading-screen">
       <div class="loader">
@@ -48,7 +109,6 @@
       </div>
     </div>
 
-    <!--! SIDEBAR ----------------->
     <div class="sidebar">
       <div class="sidebar-left">
         <li class="nav-site-logo">
@@ -75,7 +135,6 @@
         <i class="fa-solid fa-xmark" id="close-btn"></i>
       </div>
     </div>
-    <!--! NAV START --------------->
 
     <nav class="nav center">
       <div class="nav-container">
@@ -112,8 +171,6 @@
       </div>
     </nav>
 
-    <!--! NAV END -->
-
     <main class="main-content center">
       <div class="main-content-container">
         <div class="main-top">
@@ -122,7 +179,7 @@
             website like a pro
           </h1>
           <div class="star1">
-            <img src="./images/star1.png" alt="stars">
+            <img src="./images/star1.png" alt="stars" />
           </div>
           <p>
             Get a bird's eye view with our customizable dashboard. Stay on top
@@ -173,9 +230,6 @@
         </div>
       </div>
     </main>
-
-    <!--! MAIN END -->
-    <!--! MONITORING SECTION START -->
 
     <section class="center monitoring-section">
       <div class="monitoring-section-container">
@@ -262,9 +316,6 @@
         </div>
       </div>
     </section>
-
-    <!--! MONITORING SECTION END -->
-    <!--! COMMENT SECTION -->
 
     <aside class="comment-section">
       <div class="comment-section-container">
@@ -423,8 +474,6 @@
       </div>
     </aside>
 
-    <!--! COMMENT SECTION END-->
-    <!--! FAQ SECTION START -->
     <section class="center faq-section">
       <div class="faq-container">
         <div class="faq-left">
@@ -468,7 +517,6 @@
                 your account and navigating to the settings or billing section.
               </div>
             </div>
-            <!-- Add more questions and answers below -->
             <div class="tab">
               <label for="q4" class="tab-label"
                 >Do you offer customer support?
@@ -492,13 +540,10 @@
                 the prorated difference for the remaining billing period.
               </div>
             </div>
-            <!-- Add more questions and answers as needed -->
           </div>
         </div>
       </div>
     </section>
-    <!--! FAQ SECTION END -->
-    <!--! MONTHLY CARDS START  -->
 
     <article class="monthly-cards-section center">
       <div class="monthly-cards-container">
@@ -565,9 +610,6 @@
       </div>
     </article>
 
-    <!--! MONTHLY CARDS END  -->
-    <!--! FOOTER START -->
-
     <footer class="footer">
       <div class="footer-wrapper">
         <div class="footer-top">
@@ -621,8 +663,6 @@
         </div>
       </div>
     </footer>
-    <!--! FOOTER END -->
-    <!--! SCRIPT INCLUSION -->
     <script src="./js/script.js"></script>
   </body>
 </html>

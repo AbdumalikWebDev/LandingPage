@@ -49,6 +49,7 @@ li {
   --comment-section-bg: #f4f8fa;
   --white-color: #fff;
   --black-color: #000;
+  --button: #4328eb;
   --border-0: 0px;
   --border-5: 5px;
   --border-8: 8px;
@@ -279,6 +280,222 @@ body.loading {
   }
 }
 
+/*! LOGIN PAGE */
+.form-container {
+  width: 300px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  overflow: hidden;
+  box-shadow: 0px 70px 70px 3px #00000071;
+  padding: 10px;
+
+  & button {
+    border: none;
+    outline: none;
+  }
+  .form-btn {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  .form-btn .sign-in {
+    color: var(--button);
+    transition: 0.2s;
+  }
+  .form-btn .sign-up {
+    color: #cbcbcb;
+    transition: 0.2s;
+  }
+  .form-btn button {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    background-color: transparent;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .content {
+    overflow: hidden;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+  }
+  .sign-in-content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .email-input-box {
+      width: 100%;
+      height: 100%;
+      background-color: blue;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 50px;
+      border: 1px solid #d1d1d1;
+      background-color: #fff;
+      transition: 0.3s;
+      position: relative;
+
+      i {
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+      }
+    }
+    .pass-input-box {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 50px;
+      border: 1px solid #d1d1d1;
+      transition: 0.3s;
+      margin-top: 20px;
+      position: relative;
+
+      i {
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        transition: 0.3s;
+      }
+    }
+    input {
+      padding: 7px 30px;
+      padding-right: 0px;
+      padding-left: 20px;
+      width: 80%;
+      outline: none;
+      background-color: transparent;
+      border: 1px solid transparent;
+    }
+    a {
+      text-decoration: none;
+    }
+    .isForgot {
+      align-self: flex-end;
+      font-size: 12px;
+      letter-spacing: 50%;
+      color: #46a3e2;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    .sign-in-btn {
+      background-color: var(--button);
+      padding: 5px 80px;
+      border-radius: 50px;
+      font-family: "Poppins", sans-serif;
+      cursor: pointer;
+      color: #fff;
+      box-shadow: 0px 10px 40px 1px #5757579b;
+      margin-top: 20px;
+      transition: 0.3s;
+      text-wrap: nowrap;
+      &:hover {
+        transform: scale(1.03);
+        transition: 0.3s;
+      }
+      &:active {
+        transform: scale(1);
+        transition: 0.2s;
+      }
+    }
+    #privacy {
+      font-size: 14px;
+      letter-spacing: 50%;
+      color: #3ca2e6;
+      font-weight: 700;
+      margin-top: 30px;
+    }
+    .pass-input-box:hover,
+    .email-input-box:hover {
+      border: 1px solid #6a00ff;
+      transition: 0.3s;
+    }
+  }
+
+  /** ----SIGN UP CONTENT */
+
+  .sign-up-content {
+    width: 85%;
+    height: 55%;
+    margin: 0 auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      padding: 5px 30px;
+      font-family: "Poppins", sans-serif !important;
+      outline: none;
+      border-radius: 50px;
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid transparent;
+      border: 1px solid #d1d1d1;
+    }
+    .email-input,
+    .pass-input,
+    .verify-input {
+      width: 100%;
+    }
+    .pass-input,
+    .verify-input {
+      margin-top: 15px;
+    }
+    .sign-up-btn {
+      background-color: var(--button);
+      padding: 5px 80px;
+      border-radius: 50px;
+      font-family: "Poppins", sans-serif;
+      cursor: pointer;
+      color: #fff;
+      box-shadow: 0px 10px 40px 1px #5757579b;
+      align-self: center;
+      margin-top: 20px;
+      transition: 0.3s;
+      &:hover {
+        transform: scale(1.03);
+        transition: 0.3s;
+      }
+      &:active {
+        transform: scale(1);
+        transition: 0.2s;
+      }
+    }
+    .privacy {
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 50%;
+      color: #3ca2e6;
+      font-weight: 700;
+      margin-top: 30px;
+    }
+  }
+  .to-right {
+    transform: translateX(200vw);
+    transition: 0.5s;
+  }
+  .to-left {
+    transform: translateX(-200vw);
+    transition: 0.5s;
+  }
+}
+
 /*! NAV START */
 .nav {
   height: 12vh;
@@ -393,7 +610,7 @@ body.loading {
     }
     .star2 {
       position: absolute;
-      
+
       img {
         width: 200px;
       }
@@ -493,8 +710,6 @@ body.loading {
   width: 95%;
   padding-block: 30px;
 }
-/*! MAIN END ********************************************************************/
-/*! SECTION START ***************************************************************/
 .monitoring-section {
   width: 100%;
   height: fit-content;
@@ -625,11 +840,6 @@ body.loading {
   width: 90%;
   padding-block: 50px;
 }
-
-/*! MONITORING SECTION END */
-
-/*! COMMENT SECTION START */
-
 .comment-section {
   width: 100%;
   height: fit-content;
@@ -829,9 +1039,6 @@ body.loading {
   }
 }
 
-/*! COMMENT SECTION END */
-/*! FAQ START */
-
 .faq-section {
   width: 100%;
   height: fit-content;
@@ -914,8 +1121,6 @@ body.loading {
   background-color: var(--white-color);
 }
 
-/*! FAQ END */
-/*! MONTHLY CARDS */
 .monthly-cards-section {
   width: 100%;
   height: 100%;
@@ -1080,10 +1285,6 @@ body.loading {
     background-position: 0 50%;
   }
 }
-
-/*! MONTHLY CARDS END */
-
-/*! FOOTER START */
 .footer {
   width: 100%;
   display: flex;
