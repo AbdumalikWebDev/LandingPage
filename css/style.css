@@ -40,7 +40,7 @@ li {
 }
 :root {
   --color-gray: #36485c;
-  --color-blue: #0060B8;
+  --color-blue: #0060b8;
   --main-text-color: #172026;
   --light-blue: #0085ff;
   --green-color: #00a424;
@@ -80,9 +80,8 @@ li {
 button {
   cursor: pointer;
 }
-/*! LOADING SCREEN STYLES */
 body.loading {
-  overflow: hidden; /* Hide scrollbar */
+  overflow: hidden;
 }
 @keyframes square-animation {
   0% {
@@ -239,7 +238,6 @@ body.loading {
     animation-delay: -10s;
   }
 }
-/*! SIDEBAR STYLES */
 .sidebar {
   display: none;
   justify-content: space-between;
@@ -261,6 +259,14 @@ body.loading {
     width: fit-content;
     height: 100%;
 
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 3rem;
+    }
+    .sign-in {
+      margin-block: 2rem;
+    }
     li {
       margin-bottom: var(--size-3r);
       font-size: var(--size-2r);
@@ -280,53 +286,62 @@ body.loading {
   }
 }
 
-/*! LOGIN PAGE */
 .form-container {
-  width: 300px;
+  width: 350px;
   height: 500px;
   background-color: #fff;
   border-radius: 15px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   align-items: start;
-  overflow: hidden;
-  box-shadow: 0px 70px 70px 3px #00000071;
   padding: 10px;
 
-  & button {
+  input:not([type="submit"]) {
+    padding: 5px 30px;
+    font-family: "Poppins", sans-serif !important;
+    outline: none;
+    border-radius: 50px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #d1d1d1;
+  }
+  button {
+    outline: none;
+    border: none;
+  }
+  .form-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #0060b8;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  .sign-up-btn,
+  .sign-in-btn {
+    background-color: var(--button);
+    width: 100%;
+    padding-block: 5px;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
     border: none;
     outline: none;
-  }
-  .form-btn {
-    width: 100%;
-    height: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-  }
-  .form-btn .sign-in {
-    color: var(--button);
-    transition: 0.2s;
-  }
-  .form-btn .sign-up {
-    color: #cbcbcb;
-    transition: 0.2s;
-  }
-  .form-btn button {
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: "Poppins", sans-serif;
-    background-color: transparent;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  .content {
-    overflow: hidden;
-    width: 100%;
-    height: fit-content;
-    display: flex;
+    color: #fff;
+    box-shadow: 0px 10px 40px 1px #5757579b;
+    align-self: center;
+    margin-top: 20px;
+    text-align: center;
+    transition: 0.3s;
+    &:hover {
+      transform: scale(1.03);
+      transition: 0.3s;
+    }
+    &:active {
+      transform: scale(1);
+      transition: 0.2s;
+    }
   }
   .sign-in-content {
     width: 90%;
@@ -374,10 +389,11 @@ body.loading {
         transition: 0.3s;
       }
     }
-    input {
+    .email-input-box input,
+    .pass-input-box input {
       padding: 7px 30px;
       padding-right: 0px;
-      padding-left: 20px;
+      padding-left: 15px;
       width: 80%;
       outline: none;
       background-color: transparent;
@@ -394,26 +410,7 @@ body.loading {
       font-weight: 700;
       margin-top: 10px;
     }
-    .sign-in-btn {
-      background-color: var(--button);
-      padding: 5px 80px;
-      border-radius: 50px;
-      font-family: "Poppins", sans-serif;
-      cursor: pointer;
-      color: #fff;
-      box-shadow: 0px 10px 40px 1px #5757579b;
-      margin-top: 20px;
-      transition: 0.3s;
-      text-wrap: nowrap;
-      &:hover {
-        transform: scale(1.03);
-        transition: 0.3s;
-      }
-      &:active {
-        transform: scale(1);
-        transition: 0.2s;
-      }
-    }
+
     #privacy {
       font-size: 14px;
       letter-spacing: 50%;
@@ -427,27 +424,13 @@ body.loading {
       transition: 0.3s;
     }
   }
-
-  /** ----SIGN UP CONTENT */
-
   .sign-up-content {
     width: 85%;
-    height: 55%;
+    height: fit-content;
     margin: 0 auto;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
-
-    input {
-      padding: 5px 30px;
-      font-family: "Poppins", sans-serif !important;
-      outline: none;
-      border-radius: 50px;
-      width: 100%;
-      background-color: transparent;
-      border: 1px solid transparent;
-      border: 1px solid #d1d1d1;
-    }
     .email-input,
     .pass-input,
     .verify-input {
@@ -457,26 +440,7 @@ body.loading {
     .verify-input {
       margin-top: 15px;
     }
-    .sign-up-btn {
-      background-color: var(--button);
-      padding: 5px 80px;
-      border-radius: 50px;
-      font-family: "Poppins", sans-serif;
-      cursor: pointer;
-      color: #fff;
-      box-shadow: 0px 10px 40px 1px #5757579b;
-      align-self: center;
-      margin-top: 20px;
-      transition: 0.3s;
-      &:hover {
-        transform: scale(1.03);
-        transition: 0.3s;
-      }
-      &:active {
-        transform: scale(1);
-        transition: 0.2s;
-      }
-    }
+
     .privacy {
       text-decoration: none;
       font-size: 14px;
@@ -495,8 +459,45 @@ body.loading {
     transition: 0.5s;
   }
 }
+.sign-in-box,
+.sign-up-box {
+  position: fixed;
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  transition: all 0.3s;
+  box-shadow: none;
+  transform: translate(-100%, -50%);
 
-/*! NAV START */
+  .form-close-btn {
+    font-size: 1.5rem;
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    background-color: whitesmoke;
+    cursor: pointer;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    top: 5%;
+    left: 5%;
+  }
+}
+.show-form {
+  transition: all 0.3s ease-in-out !important;
+  opacity: 1 !important;
+  box-shadow: 0px 0px 100vw 100vw #000000bd !important;
+  left: 50% !important;
+  display: flex !important;
+  transform: translate(-50%, -50%) !important;
+}
+.hide-form {
+  transition: all 0.3s;
+  opacity: 0;
+}
+
 .nav {
   height: 12vh;
 
@@ -536,6 +537,33 @@ body.loading {
       color: var(--color-gray);
       &:hover {
         color: var(--color-blue);
+        filter: invert(23%) sepia(99%) saturate(1631%) hue-rotate(191deg)
+          brightness(97%) contrast(106%);
+      }
+    }
+    #sign-in-nav-btn {
+      background-image: url("../icons/sign-in.svg");
+    }
+    #sign-up-nav-btn {
+      background-image: url("../icons/user-circle.svg");
+    }
+    input[type="button"] {
+      background-color: transparent;
+      color: var(--color-gray);
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      font-family: inherit;
+      background-repeat: no-repeat;
+      background-position: 0px center;
+      padding: 5px 35px;
+      background-size: calc(var(--size-08) + var(--size-1r));
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-blue);
+        filter: invert(23%) sepia(99%) saturate(1631%) hue-rotate(191deg)
+          brightness(97%) contrast(106%);
       }
     }
     i {
@@ -569,8 +597,6 @@ body.loading {
   align-items: center;
 }
 
-/*! NAV END */
-/*! MAIN-CONTENT START */
 .main-content {
   width: 100%;
   margin-bottom: var(--size-5r);
@@ -858,7 +884,7 @@ body.loading {
     }
     p {
       max-width: 680px;
-      margin-top: 16px;
+      margin-top: 1rem;
       line-height: 150%;
       color: var(--color-gray);
     }
@@ -907,10 +933,10 @@ body.loading {
       font-weight: var(--weight-500);
     }
     .google {
-      background-image: url("https://iam-printing.com/wp-content/uploads/2019/03/oooo.plus_151-1.png");
+      background-image: url("../logo/google-logo.png");
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: 40px;
+      background-size: 100%;
       width: 30px;
       height: 30px;
       background-color: var(--white-color);
@@ -919,7 +945,7 @@ body.loading {
       border: 1px solid #00000070;
     }
     .twitter {
-      background-image: url("//abs.twimg.com/favicons/twitter.3.ico");
+      background-image: url("../logo/x-logo.png");
       background-position: center center;
       background-repeat: no-repeat;
       background-size: 30px;
@@ -945,9 +971,9 @@ body.loading {
     .slide {
       position: absolute;
       left: 100%;
-      width: 270px;
-      padding: 10px;
-      height: 180px;
+      width: 22%;
+      padding: 1rem;
+      height: 200px;
       background-color: var(--white-color);
       border-radius: var(--border-5);
       box-shadow: 0px 10px 10px -4px #0000000a;
@@ -956,22 +982,24 @@ body.loading {
       animation-duration: 50s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
+      will-change: transform;
 
       img {
         display: block;
       }
       p:not(.comment-user-name) {
-        font-size: var(--size-08);
+        font-size: var(--size-1r);
         color: var(--color-gray);
         margin-top: 10px;
+        max-width: 100%;
       }
     }
     .slide2 {
       position: absolute;
       left: -270px;
-      width: 270px;
-      padding: 10px;
-      height: 180px;
+      width: 22%;
+      padding: 1rem;
+      height: 200px;
       background-color: var(--white-color);
       border-radius: var(--border-5);
       box-shadow: 0px 10px 10px -4px #0000000a;
@@ -980,9 +1008,10 @@ body.loading {
       animation-duration: 50s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
+      will-change: transform;
 
       p:not(.comment-user-name) {
-        font-size: var(--size-08);
+        font-size: var(--size-1r);
         color: var(--color-gray);
         margin-top: 10px;
       }
@@ -1267,7 +1296,6 @@ body.loading {
   }
 }
 
-/**Animation for Try For Free section */
 @keyframes animatedbg {
   0% {
     background-position: 0 50%;

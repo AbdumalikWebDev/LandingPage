@@ -48,53 +48,92 @@ radioInputs.forEach((input, index) => {
 });
 //! for FAQ questions;
 
-let signInButton = document.querySelector(".sign-in"),
-  signUpButton = document.querySelector(".sign-up"),
-  signInContent = document.querySelector(".sign-in-content"),
-  signUpContent = document.querySelector(".sign-up-content"),
-  emailInput = document.querySelector(".email-input"),
-  emailIcon = document.querySelector(".email-icon"),
-  eyeIcon = document.querySelector(".eye-icon"),
-  passwordInput = document.querySelector(".pass-input"),
-  verifyInput = document.querySelector(".verify-input");
+let signInButton = document.querySelector(".sign-in-btn"),
+  signUpButton = document.querySelector(".sign-up-btn"),
+  signInContent = document.querySelector(".sign-in-box"),
+  signUpContent = document.querySelector(".sign-up-box"),
+  verifyInput = document.querySelector(".verify-input"),
+  signInNav = document.querySelector("#sign-in-nav-btn"),
+  signUpNav = document.querySelector("#sign-up-nav-btn");
 
-signInButton.addEventListener("click", () => {
-  signUpButton.style.color = "#cbcbcb";
-  signInButton.style.color = "#038be5";
-  signUpContent.classList.add("to-right");
-  signUpContent.style.display = "none";
+let togglePassword = document.querySelector("#togglePassword");
+let passwordInput = document.querySelector("#sign-in-password-input");
+let formCloseBtns = document.querySelectorAll(".form-close-btn");
+let sidebarSignInBtn = document.querySelector("#sign-in-side-nav");
+let sidebarSignUpBtn = document.querySelector("#sign-up-side-nav");
+
+signInNav.addEventListener("click", () => {
+  if (!signUpContent.classList.contains("show-form")) {
+    signInContent.style.display = "flex";
+    body.style.overflow = "hidden";
+    setTimeout(() => {
+      signInContent.classList.add("show-form");
+      signInContent.classList.remove("hide-form");
+    }, 10);
+  }
+});
+formCloseBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    signInContent.classList.add("hide-form");
+    signUpContent.classList.add("hide-form");
+    signInContent.classList.remove("show-form");
+    signUpContent.classList.remove("show-form");
+    body.style.overflow = "visible";
+
+    setTimeout(() => {
+      signInContent.style.display = "none";
+      signUpContent.style.display = "none";
+    }, 310);
+  });
+});
+signUpNav.addEventListener("click", () => {
+  if (!signInContent.classList.contains("show-form")) {
+    signUpContent.style.display = "flex";
+    body.style.overflow = "hidden";
+    setTimeout(() => {
+      signUpContent.classList.add("show-form");
+      signUpContent.classList.remove("hide-form");
+    }, 5);
+  }
+});
+document.addEventListener("click", (e) => {
+  if (!signInContent.contains(e.target) && e.target !== signInNav) {
+    signInContent.classList.remove("show-form");
+    signInContent.classList.add("hide-form");
+    body.style.overflow = "visible";
+  }
+  if (!signUpContent.contains(e.target) && e.target !== signUpNav) {
+    signUpContent.classList.remove("show-form");
+    signUpContent.classList.add("hide-form");
+    body.style.overflow = "visible";
+  }
+});
+sidebarSignInBtn.addEventListener("click", () => {
+  sidebar.style.left = "100%";
   signInContent.style.display = "flex";
+  body.style.overflow = "hidden";
+  setTimeout(() => {
+    signInContent.classList.add("show-form");
+    signInContent.classList.remove("hide-form");
+  }, 500);
 });
-signUpButton.addEventListener("click", () => {
-  signUpButton.style.color = "#038be5";
-  signInButton.style.color = "#cbcbcb";
-  signUpContent.classList.remove("to-right");
-  signInContent.style.display = "none";
+sidebarSignUpBtn.addEventListener("click", () => {
+  sidebar.style.left = "100%";
   signUpContent.style.display = "flex";
+  body.style.overflow = "hidden";
+  setTimeout(() => {
+    signUpContent.classList.add("show-form");
+    signUpContent.classList.remove("hide-form");
+  }, 505);
 });
+togglePassword.addEventListener("click", function () {
+  console.log("Eye icon clicked");
 
-eyeIcon.addEventListener("click", () => {
-  if (
-    passwordInput.getAttribute("type") === "text" &&
-    eyeIcon.classList.contains("fa-eye")
-  ) {
-    passwordInput.setAttribute("type", "password");
-    eyeIcon.classList.remove("fa-eye");
-    eyeIcon.classList.add("fa-eye-slash");
-  } else {
-    passwordInput.setAttribute("type", "text");
-    eyeIcon.classList.remove("fa-eye-slash");
-    eyeIcon.classList.add("fa-eye");
-  }
-});
+  const type =
+    passwordInput.getAttribute("type") === "password" ? "text" : "password";
+  passwordInput.setAttribute("type", type);
 
-emailIcon.addEventListener("click", () => {
-  if (emailIcon.classList.contains("fa-envelope")) {
-    emailIcon.classList.remove("fa-envelope");
-    emailIcon.classList.add("fa-envelope-open");
-  } else {
-    emailIcon.classList.remove("fa-envelope-open");
-    emailIcon.classList.add("fa-envelope");
-  }
+  this.classList.toggle("fa-eye");
+  this.classList.toggle("fa-eye-slash");
 });
 //! for Login Page;
