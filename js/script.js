@@ -8,19 +8,18 @@ const sidebar = document.querySelector(".sidebar");
 const body = document.body;
 const radioInputs = document.querySelectorAll('input[type="radio"]');
 const plusIcons = document.querySelectorAll(".plus");
-
-window.addEventListener("load", function () {
-  document.body.style.overflow = "hidden";
-  setTimeout(function () {
-    loader.style.display = "none";
-    loaderBox.style.display = "none";
-    document.body.style.overflow = "visible";
-
-    document.body.classList.remove("loading");
-  }, 2000);
-});
-//! for loading screen;
-
+const signInButton = document.querySelector(".sign-in-btn"),
+  signUpButton = document.querySelector(".sign-up-btn"),
+  signInContent = document.querySelector(".sign-in-box"),
+  signUpContent = document.querySelector(".sign-up-box"),
+  verifyInput = document.querySelector(".verify-input"),
+  signInNav = document.querySelector("#sign-in-nav-btn"),
+  signUpNav = document.querySelector("#sign-up-nav-btn");
+const togglePassword = document.querySelector("#togglePassword");
+const passwordInput = document.querySelector("#sign-in-password-input");
+const formCloseBtns = document.querySelectorAll(".form-close-btn");
+const sidebarSignInBtn = document.querySelector("#sign-in-side-nav");
+const sidebarSignUpBtn = document.querySelector("#sign-up-side-nav");
 openBtn.addEventListener("click", () => {
   sidebar.style.left = "0%";
   body.style.overflow = "hidden";
@@ -31,8 +30,6 @@ closeBtn.addEventListener("click", () => {
   body.style.overflow = "visible";
   closeBtn.style.transform = "rotateZ(90deg)";
 });
-//! for sidebar;
-
 radioInputs.forEach((input, index) => {
   input.addEventListener("change", () => {
     plusIcons.forEach((icon) => {
@@ -46,22 +43,6 @@ radioInputs.forEach((input, index) => {
     }
   });
 });
-//! for FAQ questions;
-
-let signInButton = document.querySelector(".sign-in-btn"),
-  signUpButton = document.querySelector(".sign-up-btn"),
-  signInContent = document.querySelector(".sign-in-box"),
-  signUpContent = document.querySelector(".sign-up-box"),
-  verifyInput = document.querySelector(".verify-input"),
-  signInNav = document.querySelector("#sign-in-nav-btn"),
-  signUpNav = document.querySelector("#sign-up-nav-btn");
-
-let togglePassword = document.querySelector("#togglePassword");
-let passwordInput = document.querySelector("#sign-in-password-input");
-let formCloseBtns = document.querySelectorAll(".form-close-btn");
-let sidebarSignInBtn = document.querySelector("#sign-in-side-nav");
-let sidebarSignUpBtn = document.querySelector("#sign-up-side-nav");
-
 signInNav.addEventListener("click", () => {
   if (!signUpContent.classList.contains("show-form")) {
     signInContent.style.display = "flex";
@@ -96,18 +77,6 @@ signUpNav.addEventListener("click", () => {
     }, 5);
   }
 });
-document.addEventListener("click", (e) => {
-  if (!signInContent.contains(e.target) && e.target !== signInNav) {
-    signInContent.classList.remove("show-form");
-    signInContent.classList.add("hide-form");
-    body.style.overflow = "visible";
-  }
-  if (!signUpContent.contains(e.target) && e.target !== signUpNav) {
-    signUpContent.classList.remove("show-form");
-    signUpContent.classList.add("hide-form");
-    body.style.overflow = "visible";
-  }
-});
 sidebarSignInBtn.addEventListener("click", () => {
   sidebar.style.left = "100%";
   signInContent.style.display = "flex";
@@ -127,8 +96,6 @@ sidebarSignUpBtn.addEventListener("click", () => {
   }, 505);
 });
 togglePassword.addEventListener("click", function () {
-  console.log("Eye icon clicked");
-
   const type =
     passwordInput.getAttribute("type") === "password" ? "text" : "password";
   passwordInput.setAttribute("type", type);
@@ -136,4 +103,3 @@ togglePassword.addEventListener("click", function () {
   this.classList.toggle("fa-eye");
   this.classList.toggle("fa-eye-slash");
 });
-//! for Login Page;
